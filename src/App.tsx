@@ -15,25 +15,25 @@ interface IData {
 
 const data = [
   {
-    nome: "teste0",
+    nome: "POST-01",
   },
   {
-    nome: "teste1",
+    nome: "POST-02",
   },
   {
-    nome: "teste2",
+    nome: "POST-03",
   },
   {
-    nome: "teste3",
+    nome: "POST-04",
   },
   {
-    nome: "teste4",
+    nome: "POST-05",
   },
   {
-    nome: "teste5",
+    nome: "POST-06",
   },
   {
-    nome: "teste6",
+    nome: "POST-07",
   }
 ];
 
@@ -43,7 +43,7 @@ const chuckArray = (array: IData[]) => {
 
     if (i % 2 === 0) {
       acc.push(array.slice(i, i + 2))
-    };  
+    };
     return acc;
 
   }, []);
@@ -58,7 +58,7 @@ function App() {
   // console.log(chunk);
 
   return (
-    <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
+    <Swiper pagination={true} modules={[Pagination]} className="mySwiper container">
 
       {chunk.map((item: IData[], index: number) => (
 
@@ -66,7 +66,7 @@ function App() {
           <h1>SLIDE{index}</h1>
 
           {item.map((item: IData, index: number) => (
-            <div>
+            <div className="item">
               {item.nome}
             </div>
           ))}
